@@ -548,6 +548,18 @@
             font-weight: 600;
         }
 
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+
+        .navbar.dark-mode {
+            background-color: black;
+            color: white;
+        }
+
+
+
         @media screen and (max-width: 1400px) {
             #profile {
                 height: 83vh;
@@ -969,11 +981,22 @@
                 .ex-container2 {
                     padding: 0 1rem 0 1rem;
                 }
+                
+
+                .logo{
+                    margin-bottom: 8px;
+                }
+            
             }
+            
 
             @media screen and (max-width: 350px) {
                 #profile1 {
                     height: 140vh;
+                }
+
+                .logo{
+                    margin-bottom: 8px;
                 }
 
                 .section-container {
@@ -1048,7 +1071,6 @@
                  font-size: 0.9rem;
                 }
     }
-            }
     </style>
 </head>
 
@@ -1056,16 +1078,21 @@
     <header id="home">
         <nav id="desktop-nav">
             <div class="logo"><img src="images/ms1.png" alt="Logo"></div>
+            <div><img id="altImg1" src="images/alternate1.jpg" alt="Alternate Image 1" class="logo" style="display: none;"></div>
             <ul class="nav-links">
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#about">ABOUT</a></li>
                 <li><a href="#skills">EXPERTISE</a></li>
                 <li><a href="#projects">PROJECTS</a></li>
                 <li><a href="#contact">CONTACT</a></li>
+                <a href="#" id="colorToggleBtn" class="cm" onclick="toggleColorMode(); return false;"><i class="fa-solid fa-moon" style="color: #000000;"></i></a>
+
             </ul>
         </nav>
         <nav id="hamburger-nav">
             <div class="logo"><img src="images/ms1.png" alt="Logo"></div>
+            <div><img id="altImg1" src="images/alternate1.jpg" alt="Alternate Image 1" class="logo" style="display: none;"></div>
+            <a href="#" id="colorToggleBtn" class="cm" onclick="toggleColorMode(); return false;"><i class="fa-solid fa-moon" style="color: #000000;"></i></a>
             <div class="hamburger-menu">
                 <div class="hamburger-icon" onclick="toggleMenu()">
                     <span></span>
@@ -1094,7 +1121,9 @@
             <div class="social-container">
                 <img src="images/li.png" class="icon"
                     onclick="location.href='https://www.linkedin.com/in/meharwan-singh-316388278/'">
+                <img id="altImg2" src="images/li2.png" alt="Alternate Image 1" class="logo" style="display: none;" onclick="location.href='https://www.linkedin.com/in/meharwan-singh-316388278/'">
                 <img src="images/be.png" class="icon" onclick="location.href='https://www.behance.net/meharramgarh1a'">
+                <img id="altImg2" src="images/be2.png" alt="Alternate Image 1" class="logo" style="display: none;" onclick="location.href='https://www.behance.net/meharramgarh1a'">
             </div>
         </div>
         <div class="section__pic-container">
@@ -1116,7 +1145,9 @@
             <div class="social-container">
                 <img src="images/li.png" class="icon"
                     onclick="location.href='https://www.linkedin.com/in/meharwan-singh-316388278/'">
+                    <img id="altImg1" src="images/li2.png" alt="Alternate Image 1" class="logo" style="display: none;" onclick="location.href='https://www.linkedin.com/in/meharwan-singh-316388278/'">
                 <img src="images/be.png" class="icon" onclick="location.href='https://www.behance.net/meharramgarh1a'">
+                <img id="altImg2" src="images/be2.png" alt="Alternate Image 1" class="logo" style="display: none;" onclick="location.href='https://www.behance.net/meharramgarh1a'">
             </div>
         </div>
     </section>
@@ -1240,7 +1271,7 @@
                             Behance
                         </button>
                         <button class="btn btn-color-2 project-btn"
-                            onclick="location.href='https://www.behance.net/meharramgarh1a'">
+                            onclick="location.href='https://meharwansingh1.github.io/MyTravelVlogs/'">
                             Live Demo
                         </button>
                     </div>
@@ -1269,11 +1300,13 @@
         <h1 class="title">Contact Me</h1>
         <div class="contact-info-upper-container">
             <div class="contact-info-container">
-                <img src="images/email.png" alt="e-icon" class="icon contact-icon email-icon">
+                <img src="images/email.png" alt="e-icon" id="img1" class="icon contact-icon email-icon img1">
+                <img id="altImg1" src="images/email2.png" alt="Alternate Image 1" class="logo" style="display: none;" onclick="location.href='https://www.behance.net/meharramgarh1a'">
                 <p><a href="mailto:meharramgarhia16.com">meharramgarh1a16@gmail.com</a></p>
             </div>
             <div class="contact-info-container">
                 <img src="images/li.png" alt="li-icon" class="icon contact-icon linkedin-icon">
+                <img id="altImg1" src="images/li2.png" alt="Alternate Image 1" class="logo" style="display: none;" onclick="location.href='https://www.linkedin.com/in/meharwan-singh-316388278/'">
                 <a href="https://www.linkedin.com/in/meharwan-singh-316388278/" target="_blank">Linkedin</a>
             </div>
         </div>
@@ -1300,6 +1333,161 @@
             menu.classList.toggle("open");
             icon.classList.toggle("open");
         }
+        function toggleColorMode() {
+    // Get body and navbar elements
+    const body = document.body;
+    const navbar = document.querySelector('header');
+
+    // Toggle class on body to indicate color mode
+    body.classList.toggle('dark-mode');
+
+    // Check if body has dark-mode class
+    const isDarkMode = body.classList.contains('dark-mode');
+
+    // Set colors based on current mode
+    if (isDarkMode) {
+        // Dark mode (white background, black text)
+        body.style.backgroundColor = 'black';
+        body.style.color = 'white';
+        navbar.style.backgroundColor = 'black';
+        navbar.style.borderBottomColor = 'rgba(255, 255, 255, 0.1)'; // Adjusting the border color
+
+        // Skill section - adjust skill box borders and text color
+        document.querySelectorAll('.skill-box').forEach(box => {
+            box.style.borderColor = 'white';
+            box.style.color = 'white';
+        });
+
+        // Change specific dark images to light images
+        document.querySelectorAll('img').forEach(img => {
+            const isInSkillBox = img.closest('.skill-box');
+            const isInArticleContainer = img.closest('.article-container');
+            const isInSectionPicContainer = img.closest('.section__pic-container');
+            
+            if (!isInSkillBox && !isInArticleContainer && !isInSectionPicContainer && img.src.includes('_dark.')) {
+                img.src = img.src.replace('_dark.', '.'); // Replace '_dark.' with '.'
+            }
+        });
+
+        // Contact section - adjust email and LinkedIn colors
+        document.querySelectorAll('.contact-info-container a').forEach(link => {
+            link.style.color = 'white';
+        });
+
+        // Invert color of contact-info-text
+        document.querySelectorAll('.contact-info-text').forEach(text => {
+            text.style.color = 'black';
+        });
+
+        // Navigation links
+        document.querySelectorAll('.nav-links li a').forEach(item => {
+            item.style.color = 'white';
+        });
+
+        // Hamburger icon
+        document.querySelectorAll('.hamburger-icon span').forEach(item => {
+            item.style.backgroundColor = 'white';
+        });
+
+        // Change download CV button
+        const downloadButton = document.querySelector('.profile-section .download-cv');
+        if (downloadButton) {
+            downloadButton.style.color = 'white';
+            downloadButton.style.backgroundColor = 'black';
+        }
+
+        // Change logo image
+        const logoImg = document.querySelector('.logo img');
+        if (logoImg) {
+            logoImg.src = 'images/ms2.png';
+        }
+
+    } else {
+        // Light mode (black background, white text)
+        body.style.backgroundColor = 'white';
+        body.style.color = 'black';
+        navbar.style.backgroundColor = 'white';
+        navbar.style.borderBottomColor = 'rgba(0, 0, 0, 0.1)'; // Adjusting the border color
+
+        // Skill section - adjust skill box borders and text color
+        document.querySelectorAll('.skill-box').forEach(box => {
+            box.style.borderColor = 'black';
+            box.style.color = 'black';
+        });
+
+        // Change specific light images to dark images
+        document.querySelectorAll('img').forEach(img => {
+            const isInSkillBox = img.closest('.skill-box');
+            const isInArticleContainer = img.closest('.article-container');
+            const isInSectionPicContainer = img.closest('.section__pic-container');
+            
+            if (!isInSkillBox && !isInArticleContainer && !isInSectionPicContainer && !img.src.includes('_dark.')) {
+                img.src = img.src.replace('.', '_dark.'); // Append '_dark.' before the file extension
+            }
+        });
+
+        // Contact section - adjust email and LinkedIn colors
+        document.querySelectorAll('.contact-info-container a').forEach(link => {
+            link.style.color = 'black';
+        });
+
+        // Invert color of contact-info-text
+        document.querySelectorAll('.contact-info-text').forEach(text => {
+            text.style.color = 'white';
+        });
+
+        // Navigation links
+        document.querySelectorAll('.nav-links li a').forEach(item => {
+            item.style.color = 'black';
+        });
+
+        // Hamburger icon
+        document.querySelectorAll('.hamburger-icon span').forEach(item => {
+            item.style.backgroundColor = 'black';
+        });
+
+        // Restore download CV button to light mode
+        const downloadButton = document.querySelector('.profile-section .download-cv');
+        if (downloadButton) {
+            downloadButton.style.color = 'black';
+            downloadButton.style.backgroundColor = 'white';
+        }
+
+        // Restore logo image to light mode
+        const logoImg = document.querySelector('.logo img');
+        if (logoImg) {
+            logoImg.src = 'images/ms1.png.png'; // Replace with the original light mode logo path
+        }
+    }
+          }var img1 = document.getElementById('img1');
+            var img2 = document.getElementById('img2');
+            var altImg1 = document.getElementById('altImg1');
+            var altImg2 = document.getElementById('altImg2');
+
+            if (!colorMode) {
+                // Switch to alternate images
+                img1.classList.remove('default-img');
+                img1.classList.add('alt-img');
+                img2.classList.remove('default-img');
+                img2.classList.add('alt-img');
+                altImg1.classList.remove('alt-img');
+                altImg1.classList.add('default-img');
+                altImg2.classList.remove('alt-img');
+                altImg2.classList.add('default-img');
+                colorMode = true;
+            } else {
+                img1.classList.remove('alt-img');
+                img1.classList.add('default-img');
+                img2.classList.remove('alt-img');
+                img2.classList.add('default-img');
+                altImg1.classList.remove('default-img');
+                altImg1.classList.add('alt-img');
+                altImg2.classList.remove('default-img');
+                altImg2.classList.add('alt-img');
+                colorMode = false;
+            }
+
+
     </script>
 </body>
 
