@@ -245,16 +245,6 @@
             cursor: pointer;
         }
 
-        .btn-color-1,
-        .btn-color-2:hover {
-            border: rgb(53, 53, 53) 0.1rem solid;
-        }
-
-        .btn-color-1:hover {
-            background: white;
-            color: black;
-        }
-
         .btn-color-1 {
             background-color: black;
             color: #fff;
@@ -262,12 +252,6 @@
 
         .btn-color-2 {
             background: none;
-        }
-
-        .btn-color-2:hover {
-            border: #fff .1rem solid;
-            background-color: black;
-            color: #fff;
         }
 
         .btn-container {
@@ -747,7 +731,8 @@
                 }
 
                 #skills {
-                    height: 58vh;
+                    height: 80vh;
+                    margin-bottom: 120px;
                 }
 
                 #projects {
@@ -984,7 +969,12 @@
                 
 
                 .logo{
-                    margin-bottom: 8px;
+                    margin-bottom: 10px;
+                }
+
+                .ham{
+                    margin-top: 10px;
+                    height: 28px;
                 }
             
             }
@@ -996,7 +986,11 @@
                 }
 
                 .logo{
-                    margin-bottom: 8px;
+                    margin-bottom: 12px;
+                }
+
+                .hamburger-nav .cm{
+                    margin-left: 100px;
                 }
 
                 .section-container {
@@ -1070,6 +1064,11 @@
                 #profile1 .title {
                  font-size: 0.9rem;
                 }
+
+                .ham{
+                    margin-top: 10px;
+                    height: 28px;
+                }
     }
     </style>
 </head>
@@ -1082,17 +1081,18 @@
             <ul class="nav-links">
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#about">ABOUT</a></li>
-                <li><a href="#skills">EXPERTISE</a></li>
+                <li><a href="#skills">SKILLS</a></li>
                 <li><a href="#projects">PROJECTS</a></li>
                 <li><a href="#contact">CONTACT</a></li>
-                <a href="#" id="colorToggleBtn" class="cm" onclick="toggleColorMode(); return false;"><i class="fa-solid fa-moon" style="color: #000000;"></i></a>
+                <img src="images/moon.png" href="#" id="colorToggleBtn" class="cm icon" onclick="toggleColorMode(); return false;"></img>
 
             </ul>
         </nav>
         <nav id="hamburger-nav">
             <div class="logo"><img src="images/ms1.png" alt="Logo"></div>
-            <div><img id="altImg1" src="images/alternate1.jpg" alt="Alternate Image 1" class="logo" style="display: none;"></div>
-            <a href="#" id="colorToggleBtn" class="cm" onclick="toggleColorMode(); return false;"><i class="fa-solid fa-moon" style="color: #000000;"></i></a>
+            <div class="mn2">
+            <img src="images/moon.png" href="#" id="colorToggleBtn" class="cm icon ham" onclick="toggleColorMode(); return false;"></img>
+            </div>
             <div class="hamburger-menu">
                 <div class="hamburger-icon" onclick="toggleMenu()">
                     <span></span>
@@ -1102,7 +1102,7 @@
                 <ul class="menu-links">
                     <li><a href="#home" onclick="toggleMenu()">HOME</a></li>
                     <li><a href="#about" onclick="toggleMenu()">ABOUT</a></li>
-                    <li><a href="#skills" onclick="toggleMenu()">EXPERTISE</a></li>
+                    <li><a href="#skills" onclick="toggleMenu()">SKILLS</a></li>
                     <li><a href="#projects" onclick="toggleMenu()">PROJECTS</a></li>
                     <li><a href="#contact" onclick="toggleMenu()">CONTACT</a></li>
                 </ul>
@@ -1119,11 +1119,9 @@
                 <button class="btn btn-color-1" onclick="location.href='#contact'">CONTACT</button>
             </div>
             <div class="social-container">
-                <img src="images/li.png" class="icon"
-                    onclick="location.href='https://www.linkedin.com/in/meharwan-singh-316388278/'">
-                <img id="altImg2" src="images/li2.png" alt="Alternate Image 1" class="logo" style="display: none;" onclick="location.href='https://www.linkedin.com/in/meharwan-singh-316388278/'">
-                <img src="images/be.png" class="icon" onclick="location.href='https://www.behance.net/meharramgarh1a'">
-                <img id="altImg2" src="images/be2.png" alt="Alternate Image 1" class="logo" style="display: none;" onclick="location.href='https://www.behance.net/meharramgarh1a'">
+                <div class="sc1"><img src="images/li.png" class="icon"
+                    onclick="location.href='https://www.linkedin.com/in/meharwan-singh-316388278/'"></div>
+                    <div class="sc2"><img src="images/be.png" class="icon" onclick="location.href='https://www.behance.net/meharramgarh1a'"></div>
             </div>
         </div>
         <div class="section__pic-container">
@@ -1139,15 +1137,13 @@
             <h1 class="title">Meharwan Singh</h1>
             <p class="section__text__p2">Frontend Developer and Graphic Designer</p>
             <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('images/MSCV.pdf')">Download CV</button>
+                <button class="btn btn-color-2 bt2" onclick="window.open('images/MSCV.pdf')">Download CV</button>
                 <button class="btn btn-color-1" onclick="location.href='#contact'">CONTACT</button>
             </div>
             <div class="social-container">
-                <img src="images/li.png" class="icon"
-                    onclick="location.href='https://www.linkedin.com/in/meharwan-singh-316388278/'">
-                    <img id="altImg1" src="images/li2.png" alt="Alternate Image 1" class="logo" style="display: none;" onclick="location.href='https://www.linkedin.com/in/meharwan-singh-316388278/'">
-                <img src="images/be.png" class="icon" onclick="location.href='https://www.behance.net/meharramgarh1a'">
-                <img id="altImg2" src="images/be2.png" alt="Alternate Image 1" class="logo" style="display: none;" onclick="location.href='https://www.behance.net/meharramgarh1a'">
+                <div class="sc11"><img src="images/li.png" class="icon li"
+                    onclick="location.href='https://www.linkedin.com/in/meharwan-singh-316388278/'"></div>
+                    <div class="sc22"><img src="images/be.png" class="icon be" onclick="location.href='https://www.behance.net/meharramgarh1a'"></div>
             </div>
         </div>
     </section>
@@ -1299,14 +1295,12 @@
         <p class="section__text__p1">Get In Touch</p>
         <h1 class="title">Contact Me</h1>
         <div class="contact-info-upper-container">
-            <div class="contact-info-container">
+            <div class="contact-info-container fd1">
                 <img src="images/email.png" alt="e-icon" id="img1" class="icon contact-icon email-icon img1">
-                <img id="altImg1" src="images/email2.png" alt="Alternate Image 1" class="logo" style="display: none;" onclick="location.href='https://www.behance.net/meharramgarh1a'">
                 <p><a href="mailto:meharramgarhia16.com">meharramgarh1a16@gmail.com</a></p>
             </div>
-            <div class="contact-info-container">
-                <img src="images/li.png" alt="li-icon" class="icon contact-icon linkedin-icon">
-                <img id="altImg1" src="images/li2.png" alt="Alternate Image 1" class="logo" style="display: none;" onclick="location.href='https://www.linkedin.com/in/meharwan-singh-316388278/'">
+            <div class="contact-info-container fd2">
+                <img src="images/li.png" alt="li-icon" class="icon contact-icon linkedin-icon" onclick="location.href='https://www.linkedin.com/in/meharwan-singh-316388278/'">
                 <a href="https://www.linkedin.com/in/meharwan-singh-316388278/" target="_blank">Linkedin</a>
             </div>
         </div>
@@ -1317,7 +1311,7 @@
                 <ul class="nav-links">
                     <li><a href="#home">HOME</a></li>
                     <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#expertise">EXPERTISE</a></li>
+                    <li><a href="#skills">SKILLS</a></li>
                     <li><a href="#projects">PROJECTS</a></li>
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
@@ -1333,159 +1327,225 @@
             menu.classList.toggle("open");
             icon.classList.toggle("open");
         }
-        function toggleColorMode() {
-    // Get body and navbar elements
+function toggleColorMode() {
     const body = document.body;
     const navbar = document.querySelector('header');
 
-    // Toggle class on body to indicate color mode
     body.classList.toggle('dark-mode');
 
-    // Check if body has dark-mode class
     const isDarkMode = body.classList.contains('dark-mode');
 
-    // Set colors based on current mode
     if (isDarkMode) {
-        // Dark mode (white background, black text)
         body.style.backgroundColor = 'black';
         body.style.color = 'white';
         navbar.style.backgroundColor = 'black';
-        navbar.style.borderBottomColor = 'rgba(255, 255, 255, 0.1)'; // Adjusting the border color
+        navbar.style.borderBottomColor = 'rgba(255, 255, 255, 0.1)';
 
-        // Skill section - adjust skill box borders and text color
         document.querySelectorAll('.skill-box').forEach(box => {
             box.style.borderColor = 'white';
             box.style.color = 'white';
         });
 
-        // Change specific dark images to light images
         document.querySelectorAll('img').forEach(img => {
             const isInSkillBox = img.closest('.skill-box');
             const isInArticleContainer = img.closest('.article-container');
             const isInSectionPicContainer = img.closest('.section__pic-container');
-            
+
             if (!isInSkillBox && !isInArticleContainer && !isInSectionPicContainer && img.src.includes('_dark.')) {
-                img.src = img.src.replace('_dark.', '.'); // Replace '_dark.' with '.'
+                img.src = img.src.replace('_dark.', '.');
             }
         });
 
-        // Contact section - adjust email and LinkedIn colors
+        document.querySelectorAll('.icon').forEach(icon => {
+            if (icon.src.includes('.png')) {
+                icon.src = icon.src.replace('.png', '_dark.png');
+            }
+        });
+
         document.querySelectorAll('.contact-info-container a').forEach(link => {
             link.style.color = 'white';
         });
 
-        // Invert color of contact-info-text
         document.querySelectorAll('.contact-info-text').forEach(text => {
             text.style.color = 'black';
         });
 
-        // Navigation links
         document.querySelectorAll('.nav-links li a').forEach(item => {
             item.style.color = 'white';
         });
 
-        // Hamburger icon
         document.querySelectorAll('.hamburger-icon span').forEach(item => {
             item.style.backgroundColor = 'white';
         });
 
-        // Change download CV button
-        const downloadButton = document.querySelector('.profile-section .download-cv');
+        const downloadButton = document.querySelector('.btn-container .btn-color-2');
         if (downloadButton) {
             downloadButton.style.color = 'white';
             downloadButton.style.backgroundColor = 'black';
         }
 
-        // Change logo image
+        const downloaddButton = document.querySelector('.btn-container .bt2');
+        if (downloaddButton) {
+            downloaddButton.style.color = 'white';
+            downloaddButton.style.backgroundColor = 'black';
+        }
+
         const logoImg = document.querySelector('.logo img');
         if (logoImg) {
             logoImg.src = 'images/ms2.png';
         }
 
+        const logo1Img = document.querySelector('#hamburger-nav img');
+        if (logo1Img) {
+            logo1Img.src = 'images/ms2.png';
+        }
+
+        const icon1Img = document.querySelector('.sc1 img');
+        if (icon1Img) {
+            icon1Img.src = 'images/li2.png';
+        }
+
+        const icon2Img = document.querySelector('.sc2 img');
+        if (icon2Img) {
+            icon2Img.src = 'images/be2.png';
+        }
+
+        const icon5Img = document.querySelector('.sc11 img');
+        if (icon5Img) {
+            icon5Img.src = 'images/li2.png';
+        }
+
+        const icon6Img = document.querySelector('.sc22 img');
+        if (icon6Img) {
+            icon6Img.src = 'images/be2.png';
+        }
+
+        const icon3Img = document.querySelector('.fd1 img');
+        if (icon3Img) {
+            icon3Img.src = 'images/email2.png';
+        }
+        
+        const icon4Img = document.querySelector('.fd2 img');
+        if (icon4Img) {
+            icon4Img.src = 'images/li2.png';
+        }
+
+        const icon7Img = document.querySelector('.nav-links img');
+        if (icon7Img) {
+            icon7Img.src = 'images/moon2.png';
+        }
+
+        const icon8Img = document.querySelector('.mn2 img');
+        if (icon8Img) {
+            icon8Img.src = 'images/moon2.png';
+        }
+
     } else {
-        // Light mode (black background, white text)
         body.style.backgroundColor = 'white';
         body.style.color = 'black';
         navbar.style.backgroundColor = 'white';
-        navbar.style.borderBottomColor = 'rgba(0, 0, 0, 0.1)'; // Adjusting the border color
+        navbar.style.borderBottomColor = 'rgba(0, 0, 0, 0.1)';
 
-        // Skill section - adjust skill box borders and text color
         document.querySelectorAll('.skill-box').forEach(box => {
             box.style.borderColor = 'black';
             box.style.color = 'black';
         });
 
-        // Change specific light images to dark images
         document.querySelectorAll('img').forEach(img => {
             const isInSkillBox = img.closest('.skill-box');
             const isInArticleContainer = img.closest('.article-container');
             const isInSectionPicContainer = img.closest('.section__pic-container');
-            
+
             if (!isInSkillBox && !isInArticleContainer && !isInSectionPicContainer && !img.src.includes('_dark.')) {
-                img.src = img.src.replace('.', '_dark.'); // Append '_dark.' before the file extension
+                img.src = img.src.replace('.', '_dark.');
             }
         });
 
-        // Contact section - adjust email and LinkedIn colors
+        document.querySelectorAll('.icon').forEach(icon => {
+            if (icon.src.includes('_dark.png')) {
+                icon.src = icon.src.replace('_dark.png', '.png');
+            }
+        });
+
         document.querySelectorAll('.contact-info-container a').forEach(link => {
             link.style.color = 'black';
         });
 
-        // Invert color of contact-info-text
         document.querySelectorAll('.contact-info-text').forEach(text => {
             text.style.color = 'white';
         });
 
-        // Navigation links
         document.querySelectorAll('.nav-links li a').forEach(item => {
             item.style.color = 'black';
         });
 
-        // Hamburger icon
         document.querySelectorAll('.hamburger-icon span').forEach(item => {
             item.style.backgroundColor = 'black';
         });
 
-        // Restore download CV button to light mode
-        const downloadButton = document.querySelector('.profile-section .download-cv');
+        const downloadButton = document.querySelector('.btn-container .btn-color-2');
         if (downloadButton) {
             downloadButton.style.color = 'black';
             downloadButton.style.backgroundColor = 'white';
         }
 
-        // Restore logo image to light mode
+        const downloaddButton = document.querySelector('.btn-container .bt2');
+        if (downloaddButton) {
+            downloaddButton.style.color = 'black';
+            downloaddButton.style.backgroundColor = 'white';
+        }
+
         const logoImg = document.querySelector('.logo img');
         if (logoImg) {
-            logoImg.src = 'images/ms1.png.png'; // Replace with the original light mode logo path
+            logoImg.src = 'images/ms1.png';
+        }
+
+        const logo1Img = document.querySelector('#hamburger-nav img');
+        if (logo1Img) {
+            logo1Img.src = 'images/ms1.png';
+        }
+
+        const icon1Img = document.querySelector('.sc1 img');
+        if (icon1Img) {
+            icon1Img.src = 'images/li.png';
+        }
+
+        const icon2Img = document.querySelector('.sc2 img');
+        if (icon2Img) {
+            icon2Img.src = 'images/be.png';
+        }
+
+        const icon5Img = document.querySelector('.sc11 img');
+        if (icon5Img) {
+            icon5Img.src = 'images/li.png';
+        }
+
+        const icon6Img = document.querySelector('.sc22 img');
+        if (icon6Img) {
+            icon6Img.src = 'images/be.png';
+        }
+
+        const icon3Img = document.querySelector('.fd1 img');
+        if (icon3Img) {
+            icon3Img.src = 'images/email.png';
+        }
+
+        const icon4Img = document.querySelector('.fd2 img');
+        if (icon4Img) {
+            icon4Img.src = 'images/li.png';
+        }
+
+        const icon7Img = document.querySelector('.nav-links img');
+        if (icon7Img) {
+            icon7Img.src = 'images/moon.png';
+        }
+
+        const icon8Img = document.querySelector('.mn2 img');
+        if (icon8Img) {
+            icon8Img.src = 'images/moon.png';
         }
     }
-          }var img1 = document.getElementById('img1');
-            var img2 = document.getElementById('img2');
-            var altImg1 = document.getElementById('altImg1');
-            var altImg2 = document.getElementById('altImg2');
-
-            if (!colorMode) {
-                // Switch to alternate images
-                img1.classList.remove('default-img');
-                img1.classList.add('alt-img');
-                img2.classList.remove('default-img');
-                img2.classList.add('alt-img');
-                altImg1.classList.remove('alt-img');
-                altImg1.classList.add('default-img');
-                altImg2.classList.remove('alt-img');
-                altImg2.classList.add('default-img');
-                colorMode = true;
-            } else {
-                img1.classList.remove('alt-img');
-                img1.classList.add('default-img');
-                img2.classList.remove('alt-img');
-                img2.classList.add('default-img');
-                altImg1.classList.remove('default-img');
-                altImg1.classList.add('alt-img');
-                altImg2.classList.remove('default-img');
-                altImg2.classList.add('alt-img');
-                colorMode = false;
-            }
+}
 
 
     </script>
